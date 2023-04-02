@@ -26,16 +26,6 @@ type ObservableType = { value: {}; color: string };
 })
 export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
-  ngOnInit(): void {
-    const postids = of(1, 2, 3, 4, 5);
-    console.log(typeof postids);
-
-    postids
-      .pipe(
-        concatMap((id) =>
-          this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-        )
-      )
-      .subscribe((data) => console.log(data));
+  ngOnInit(): void {  
   }
 }
